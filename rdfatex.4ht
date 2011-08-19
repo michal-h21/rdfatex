@@ -1,0 +1,6 @@
+\typeout{[rdfatex 2011/08/19 ver 0.1]}
+
+% we must use \verb|\renewenvironment|, because \verb|\ConfigureEnv| doesn't have access to actual value of \verb|\rdf@subject|
+\renewenvironment{subject}[1]%
+{\def\rdf@subject{#1}\HCode{<div class="outer" about="\rdf@subject">}\EndP}%
+{\EndP\HCode{</div>}\EndP}%
