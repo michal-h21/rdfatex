@@ -4,3 +4,5 @@
 \renewenvironment{subject}[1]%
 {\def\rdf@subject{#1}\HCode{<div class="outer" about="\rdf@subject">}\EndP}%
 {\EndP\HCode{</div>}\EndP}%
+
+\renewcommand\property[2]{\HCode{<span class="rdfa_property" property="}#1\HCode{">}#2\HCode{</span>}}
