@@ -1,13 +1,14 @@
 % Support for semantic authoring in LaTeX
 \ProvidesPackage{rdfatex.sty}
-% 
+
+% xmlns definitions 
 \edef\rdf@xmlns{xmlns="http://www.w3.org/1999/xhtml"}
 \def\rdf@xmlns@separator{ }
 \newcommand\prefix[2]{\xdef\rdf@xmlns{\rdf@xmlns\rdf@xmlns@separator xmlns:#1="#2"}}
 
 \def\rdf@subject{.}
 \newcommand\setSubject[1]{\def\rdf@subject{#1}}
-\newenvironment{subject}[1]{\bigskip\hrule\setSubject{#1}}{\hrule\bigskip}
+\newenvironment{subject}[1]{\setSubject{#1}}{}
 
 \newcommand\property[2]{%
 #2\marginpar{#1}
